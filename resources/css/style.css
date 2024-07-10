@@ -1,3 +1,48 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    max-width: 1000px;
+    background-color:lightgray;
+}
+
+nav ul {
+    box-sizing: border-box;
+    padding: auto;
+    margin: auto;
+    width: 100%;
+}
+
+nav li {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    background-color: lightslategrey;
+    margin: 0px;
+    padding: 10px;
+}
+
+main {
+    background-color: antiquewhite;
+    border-radius: 40px;
+}
+
+#welcome {
+    padding: 30px;
+    margin: auto;
+}
+
+#about {
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+    margin: auto;
+}
+
+#headshot {
+    border-radius: 50%;
+    width: 300px;
+    display: inline-block;
+
 }
