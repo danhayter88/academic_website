@@ -5,22 +5,30 @@ body {
     background-color:lightgray;
 }
 
-nav ul {
-    box-sizing: border-box;
-    padding: auto;
-    margin: auto;
+header {
     width: 100%;
+    margin: auto;
+}
+
+nav {
+    margin: 0px;
 }
 
 nav li {
     box-sizing: border-box;
+    min-width: 200px;
     display: inline-block;
     text-align: center;
-    width: 200px;
     height: 40px;
     background-color: lightslategrey;
     margin: 0px;
     padding: 10px;
+    border: solid blue 2px;
+    font-weight: 600;
+}
+
+nav li:hover {
+    background-color: blueviolet;
 }
 
 main {
@@ -29,8 +37,9 @@ main {
 }
 
 #welcome {
-    padding: 30px;
-    margin: auto;
+
+    margin: 50px;
+    background-color: aquamarine;
 }
 
 #about {
