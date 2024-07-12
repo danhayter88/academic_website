@@ -1,5 +1,7 @@
 body {
     margin: 0px auto;
+    font-size: 25px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 header {
@@ -22,9 +24,20 @@ nav li {
     text-align: center;
 }
 
-main {
-    max-width: 1000px;
-    margin: auto;
+h1 {
+    font-size: 200%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+h2 {
+    font-size: 175%;
+    text-align: center;
+}
+
+footer {
+    text-align: right;
+    background-color:slategrey;
 }
 
 #website-name {
@@ -34,4 +47,68 @@ main {
     margin: auto 10px;
 }
 
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px 30px;
+}
 
+#book-section .section {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: space-between;
+}
+
+#welcome-flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#top {
+    background-color: midnightblue;
+}
+
+#about {
+    width: 65%;
+    padding: 10px;
+}
+
+#headshot {
+    border-radius: 50%;
+    padding: 10px;
+}
+
+#book-section {
+    background-color:midnightblue;
+    color: whitesmoke;
+}
+
+.book-id {
+    width: 28%;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 110%;
+    background-color: steelblue;
+    box-shadow: 3px 4px black;
+}
+
+@media (min-width: 601px) {
+    #headshot {
+        width: 30%;
+    }
+}
+
+@media (max-width: 800px) {
+    #about {
+        width: 100%;
+    }
+    .book-id {
+        width: 100%;
+    }
+    #headshot {
+        width: 100%;
+    }
+}
