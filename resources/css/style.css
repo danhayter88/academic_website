@@ -6,21 +6,27 @@ body {
 
 header {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     box-sizing: border-box;
     background-color: beige;
     min-height: 70px;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
-nav {
-    max-width: 75%;
-    display: inline-block;
-    margin: auto 5% auto;
-}
 
+#navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 nav li {
-    display: inline-block;
-    min-width: 150px;
+    list-style: none;
+    min-width: 100px;
     text-align: center;
 }
 
@@ -44,8 +50,13 @@ footer {
     display: inline-block;
     font-size: 30px;
     min-width: 240px;
-    margin: auto 10px;
 }
+
+#menu-button {
+    display: none;
+    float: right;
+}
+
 
 .section {
     max-width: 1000px;
@@ -112,3 +123,32 @@ footer {
         width: 100%;
     }
 }
+
+@media (max-width: 800px) {
+   nav {
+        display: none;
+    }
+    #menu-button {
+        display: block;
+        float: right;
+    }
+   #menu-button:checked ~ nav {
+        display: block;
+        width: 100%;
+        position: fixed;
+        top: 50px;
+   }
+   #menu-button:checked ~ #navigation {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+    #menu-button:checked ~ nav li {
+    display: block;
+    width: 100%;
+    position: relative;
+    border: solid black 2px;
+}
+}
+
