@@ -1,154 +1,216 @@
+
+* {
+    margin: 0px;
+    text-decoration: none;
+}
+
 body {
-    margin: 0px auto;
     font-size: 25px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-sizing: border-box;
     background-color: beige;
-    min-height: 70px;
+    position: fixed;
+    top: 0px;
+    height: 100px;
+    margin-bottom: 0px;
     width: 100%;
-    padding-left: 20px;
-    padding-top: 20px;
 }
 
-
-#navigation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-nav li {
-    list-style: none;
-    min-width: 100px;
-    text-align: center;
+main{
+    margin-top: 100px;
 }
 
 h1 {
-    font-size: 200%;
-    text-align: center;
-    color: whitesmoke;
+    font-size: 45px;
 }
 
-h2 {
-    font-size: 175%;
+
+nav {
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    padding: 10px 20px;
+    background-color: beige;
+    border: solid black 1px;
     text-align: center;
 }
 
-footer {
-    text-align: right;
-    background-color:slategrey;
+nav li:hover {
+    background-color: bisque;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 20px 20px;
+}
+
+.book-id {
+    background-color: beige;
+    padding: 5px;
 }
 
 #website-name {
+    font-size: 40px;
+    color: black;
     display: inline-block;
-    font-size: 30px;
-    min-width: 240px;
+    min-width: 250px;
+    float: left;
+    align-items: center;
+    padding: 25px 30px;
+    height: 50px;
 }
 
 #menu-button {
     display: none;
+}
+
+#menu-button:checked ~ nav {
+    max-height: 240px;
+}
+
+#menu-button:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    top: 0px;
+}
+
+#menu-button:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    top: 0px;
+}
+
+#menu-button:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+
+header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
     float: right;
-}
-
-
-.section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 10px 30px;
-}
-
-#book-section .section {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    justify-content: space-between;
-}
-
-#welcome-flex {
-    display: flex;
-    flex-wrap: wrap;
+    padding: 50px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+header .menu-icon .navicon:before,
+header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
     width: 100%;
-}
+  }
+  
+header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+header .menu-icon .navicon:after {
+    top: -5px;
+  }
 
 #top {
+    display: flex;
     background-color: midnightblue;
+    height: 150px;
+    text-align: center;
+    align-items: center;
 }
 
-#about {
-    width: 65%;
-    padding: 10px;
-}
-
-#headshot {
-    border-radius: 50%;
-    padding: 10px;
-}
-
-#book-section {
-    background-color:midnightblue;
+#top h1 {
     color: whitesmoke;
 }
 
-.book-id {
-    width: 28%;
-    border-radius: 20px;
-    padding: 10px;
-    margin: 5px;
-    font-size: 110%;
-    background-color: steelblue;
-    box-shadow: 3px 4px black;
+#about {
+    padding-top: 20px;
 }
 
-@media (min-width: 601px) {
-    #headshot {
-        width: 30%;
-    }
+#welcome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
-@media (max-width: 800px) {
-    #about {
-        width: 100%;
-    }
-    .book-id {
-        width: 100%;
-    }
-    #headshot {
-        width: 100%;
-    }
+#headshot {
+    max-width: 35%;
+    border-radius: 50%;
 }
 
-@media (max-width: 800px) {
-   nav {
+#intro {
+    max-width: 60%;
+}
+
+#book-section {
+    background-color: midnightblue;
+}
+
+#book-section .section {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+@media (min-width: 1000px) {
+    header .menu-icon {
         display: none;
     }
-    #menu-button {
-        display: block;
+    nav {
         float: right;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content:right;
+        align-items: center;
+        width: max-content;
+        max-height: none;
+        clear: none;
+        padding-top: 30px;
+      }
+    
+    nav li {
+        width: 100px;
+        float: left;
+        border: none;
     }
-   #menu-button:checked ~ nav {
-        display: block;
-        width: 100%;
-        position: fixed;
-        top: 50px;
-   }
-   #menu-button:checked ~ #navigation {
-    display: block;
-    width: 100%;
-    position: relative;
+
 }
 
-    #menu-button:checked ~ nav li {
-    display: block;
-    width: 100%;
-    position: relative;
-    border: solid black 2px;
+@media (max-width: 850px) {
+    #headshot {
+        max-width: 100%;
+    }
+    #intro {
+        max-width: 100%;
+    }
 }
-}
-
